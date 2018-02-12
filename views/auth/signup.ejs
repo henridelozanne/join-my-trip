@@ -11,15 +11,38 @@
 <body>
 
   <form id="form" action="/signup" method="POST">
-    <label for="username">Username</label><br>
-    <input type="text" name="username"
-      placeholder="AnakinSkywalker">
+    <label for="firstname">First Name</label><br>
+    <input type="text" name="firstname"
+      placeholder="John">
+
+    <br><br>
+
+     <label for="lastname">Last Name</label><br>
+    <input type="text" name="lastname"
+      placeholder="Doe">
+
+    <br><br>
+
+     <label for="email">Email</label><br>
+    <input type="email" name="email"
+      placeholder="john@doe.com">
 
     <br><br>
     <label for="password">Password</label><br>
     <input type="password" name="password"
       placeholder="DeathStar">
     <br><br>
+
+    <label for="description">Description</label><br>
+    <textarea type="text" name="description"
+      placeholder="Say a few words about you, the kind of trips you like, the places you want to visit..."></textarea>
+    <br><br>
+
+    
+
+    
+
+
 
     <button>Create account</button>
   </form>

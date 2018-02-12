@@ -1,4 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <title>Sign Up</title>
+</head>
+
+<body>
+Welcome to hello</p>
+<a href="signup">Signup</a>
+<a href="login">Login</a>
+<a href="logout">Logout</a>
+<a href="trip">Create your trip</a>
 
 
-    <p>Welcome to hello</p>
+<% trips.forEach(trip => { %>
+   
+        <div><%= trip.title %>
+            <br><br>
+                
+            <%= trip.description %> 
+            </div>
   
+    <% }) %>
+    
+
+    </body>
+    </html>

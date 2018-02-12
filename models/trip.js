@@ -1,28 +1,32 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
+const tripSchema = new Schema({
   title: {
     type: String,
     required: [true, "please give title to your trip"]
   },
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  },
   description: {
     type: String,
     required: [true, "please give description to your trip"]
-  },
-  startDate: {
-    type: Date,
-    required: [true, "please chose your date"]
-  },
-  endDate: {
-    type: Date,
-    required: [true, "please chose your date"]
-  },
-  creator: userid,
-  joinedUsers: [usersid],
-  activities: [activity_id],
-  place: googleplace
+  }
+  // startDate: {
+  //   type: Date,
+  //   required: [true, "please chose your date"]
+  // },
+  // endDate: {
+  //   type: Date,
+  //   required: [true, "please chose your date"]
+  // },
+  // creator: userid,
+  // joinedUsers: [usersid],
+  // activities: [activity_id],
+  // place: googleplace
 });
-const User = mongoose.model("User", userSchema);
+const Trip = mongoose.model("Trip", tripSchema);
 
-module.exports = User;
+module.exports = Trip;
