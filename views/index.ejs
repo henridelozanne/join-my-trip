@@ -1,17 +1,59 @@
-<input type="search" class="search" placeholder="Search">
+<input id="myInput" type="search" onkeyup="myFunction()" class="search" placeholder="Search">
 <div id="trips">
 
     <% trips.forEach(trip => { %>
 
-        <div class="trips">
-            <div src="" class="img" alt=""></div>
-            <%= trip.title %>
-                <br>
-                <br>
+        <li class="trips">
+            <a href="#">
+                <div src="" class="img" alt=""></div>
+                <%= trip.title %>
+                    <br>
+                    <br>
 
-                <%= trip.description %>
-        </div>
+                    <%= trip.description %>
+            </a>
+        </li>
 
         <% }) %>
 
 </div>
+
+<script>
+    function myFunction() {
+        var input, filter, tripContainer, trips, a, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        tripContainer = document.getElementById("trips");
+        li = tripContainer.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+
+            }
+        }
+    }
+</script>
+
+
+<!-- <script>
+    function getSearchResult(str) {
+
+
+    }
+
+    function showResults(results) {
+
+    }
+
+    console.log(document.getElementById("search-bar"))
+    document.getElementById("search-bar").  = (e) => {
+        const searchString = e.target.value 
+        const results = getSearchResult(searchString);
+        showResults(results)
+
+    }
+
+</script> -->
