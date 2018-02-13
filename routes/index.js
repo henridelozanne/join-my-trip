@@ -5,7 +5,7 @@ const Trip = require("../models/trip");
 const moment = require("moment");
 
 router.get("/", (req, res, next) => {
-  Trip.find({ userId: req.session.currentUser._id })
+  Trip.find({})
     .sort({ createdAt: "desc" })
     .exec((err, trips) => {
       if (err) return next(err);

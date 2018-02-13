@@ -4,15 +4,19 @@ const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const expressLayouts = require("express-ejs-layouts");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const app = express();
-
+const index = require("./routes/index");
 const authRoutes = require("./routes/auth-routes");
 const trip = require("./routes/trip");
 mongoose.connect("mongodb://localhost/basic-auth");
 
 // view engine setup
+app.use(express.static("public"));
+app.use(expressLayouts);
+app.set("layout", "layouts/main-layout");
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
@@ -37,7 +41,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", authRoutes);
-app.use("/", require("./routes/index"));
+app.use("/", index);
 app.use("/", trip);
 
 // catch 404 and forward to error handler

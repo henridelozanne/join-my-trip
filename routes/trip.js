@@ -12,7 +12,7 @@ router.post("/trip", (req, res, next) => {
   const title = req.body.title;
   const description = req.body.description;
   const newTrip = Trip({
-    userId: req.session.currentUser._id,
+    // userId: req.session.currentUser._id,
     title,
     description
   });
