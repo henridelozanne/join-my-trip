@@ -11,12 +11,21 @@ router.get("/trip", (req, res, next) => {
 router.post("/trip", (req, res, next) => {
   const title = req.body.title;
   const description = req.body.description;
+  const startdate = req.body.startdate;
+  const enddate = req.body.enddate;
   const newTrip = Trip({
     // userId: req.session.currentUser._id,
     title,
-    description
+    description,
+    startdate,
+    enddate
   });
-  if (newTrip.title === "" || newTrip.description === "") {
+  if (
+    newTrip.title === "" ||
+    newTrip.description === "" ||
+    newTrip.startdate === "" ||
+    newTrip.enddate === ""
+  ) {
     res.render("trip", {
       errorMessage: "Please fill in all the fields"
     });

@@ -5,24 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="stylesheets/style.css">
-  <title>Sign Up</title>
+  <title>Create your trip</title>
 </head>
 
 <body>
 
   <form id="form" action="/trip" method="POST">
-    <label for="title">Title</label><br>
+    <label for="title">Title</label><label for="title">Trip title:</label><br>
     <input class="o" type="text" name="title"
       placeholder="ex : Trip to Vietnam">
 
     <br><br>
-    <label for="description">Description</label><br>
+    <label for="description">Description:</label><br>
     <textarea class="o" type="text" name="description"
-      placeholder="example description"></textarea>
+      placeholder="What do you want to do there ? How many people do you want for this trip ?"></textarea>
     <br><br>
 
+    <label for="startDate">Start date:</label><br>
+    <input id="startDate" name="startdate" type="date">
+
+    <label for="endDate">End date:</label><br>
+    <input id="endDate" name="enddate" type="date">
+    <br><br>
      
-    <button>Create trip</button>
+    <button>Create trip!</button>
   </form>
 <% if (typeof(errorMessage) != "undefined") { %>
   <div class="error-message"><%= errorMessage %></div>
