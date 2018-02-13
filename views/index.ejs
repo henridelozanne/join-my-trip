@@ -8,6 +8,7 @@
 </select>
 <input type="date">
 <input type="date">
+<input type="search" class="search" placeholder="Search">
 <div id="trips">
 
     <% trips.forEach(trip => { %>
@@ -18,12 +19,12 @@
                 <%= trip.title %>
                     <br>
                     <br>
-                    </div>
-                    <div>
-                    <%= trip.description %>
-                        <%= trip.startdate %>
-                        </div>
-            
+            </div>
+            <div>
+                <%= trip.description %>
+                    <%= trip.startdate %>
+            </div>
+
         </li>
 
         <% }) %>
