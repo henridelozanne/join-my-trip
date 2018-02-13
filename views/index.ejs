@@ -8,21 +8,28 @@
 </select>
 <input type="date">
 <input type="date">
-<input type="search" class="search" placeholder="Search">
+
 <div id="trips">
 
     <% trips.forEach(trip => { %>
 
         <li class="trips">
             <div class="show">
-                <div src="" class="img" alt=""></div>
                 <%= trip.title %>
+                    <div src="" class="img" alt=""></div>
                     <br>
                     <br>
+                    <%= trip.location %>
+                        <br>
             </div>
             <div>
                 <%= trip.description %>
                     <%= trip.startdate %>
+                        <%= trip.activity %>
+
+                            <br>
+                            <br>
+                            <a href="triplink">Read More</a>
             </div>
 
         </li>
@@ -31,24 +38,6 @@
 
 </div>
 
-<script>
-    function myFunction() {
-        var input, filter, tripContainer, trips, div, i;
-        input = document.getElementById("myInput");
-        filter = input.value.toUpperCase();
-        tripContainer = document.getElementById("trips");
-        li = tripContainer.getElementsByTagName("li");
-        for (i = 0; i < li.length; i++) {
-            div = li[i].getElementsByClassName("show")[0];
-            if (div.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                li[i].style.display = "";
-            } else {
-                li[i].style.display = "none";
-
-            }
-        }
-    }
-</script>
 
 
 <!-- <script>

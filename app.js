@@ -8,6 +8,8 @@ const expressLayouts = require("express-ejs-layouts");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const app = express();
+const passport = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
 const index = require("./routes/index");
 const authRoutes = require("./routes/auth-routes");
 const trip = require("./routes/trip");
@@ -20,7 +22,8 @@ app.use(expressLayouts);
 app.set("layout", "layouts/main-layout");
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-
+app.use(passport.initialize());
+app.use(passport.session());
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger("dev"));

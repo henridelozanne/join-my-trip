@@ -11,7 +11,7 @@
 <body>
 
   <form id="form" action="/trip" method="POST">
-    <label for="title">Title</label><label for="title">Trip title:</label><br>
+    <label for="title">Trip title:</label><br>
     <input class="o" type="text" name="title"
       placeholder="ex : Trip to Vietnam">
 
@@ -20,6 +20,7 @@
     <textarea class="o" type="text" name="description"
       placeholder="What do you want to do there ? How many people do you want for this trip ?"></textarea>
     <br><br>
+     
 
     <label for="startDate">Start date:</label><br>
     <input id="startDate" name="startdate" type="date">
@@ -27,11 +28,28 @@
     <label for="endDate">End date:</label><br>
     <input id="endDate" name="enddate" type="date">
     <br><br>
-     
+    <label for="endDate">Activity:</label><br>
+    <select id="select" >
+    <option value="adventure" name="activity">Adventure</option>
+    <option value="music">Music</option>
+    <option value="hiking">Hiking</option>
+    <option value="museum">Museum</option>
+   </select><br><br>
+     <div id="pac-container">
+    <input id="pac-input" type="text"
+        placeholder="Enter a location" name="location">
+  </div>
+
+
+  
+<br>
+<div id="map"></div>
+
     <button>Create trip!</button>
   </form>
 <% if (typeof(errorMessage) != "undefined") { %>
   <div class="error-message"><%= errorMessage %></div>
 <% } %>
+
 </body>
 </html>

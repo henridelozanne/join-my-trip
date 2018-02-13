@@ -21,6 +21,13 @@ const tripSchema = new Schema({
   enddate: {
     type: Date,
     required: [true, "please chose your date"]
+  },
+  location: {
+    type: String,
+    required: [true, "silvp artv"]
+  },
+  activity: {
+    type: String
   }
   // creator: userid,
   // joinedUsers: [usersid],

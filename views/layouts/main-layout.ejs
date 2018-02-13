@@ -8,6 +8,9 @@
 
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="stylesheet" href="stylesheets/nav.css">
+     <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
     <script src="javascripts/js.js"></script>
     <title>Sign Up</title>
 </head>
@@ -19,18 +22,18 @@
 
             <a href="/" class="active">JoinTrip</a>
             <a href="about" class="right">About</a>
-            <a href="trip" class="right">Create your trip</a>
             <a href="logout" class="right">Logout</a>
             <a href="login" class="right">Login</a>
             <a href="signup" class="right">Signup</a>
-            <a href="about" class="right">About</a>
-
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+            <a href="trip" class="right">Create your trip</a>
+            
+            <a href="javascript:void(0);" class="icon" onclick="myFunc()">&#9776;</a>
         </div>
 
 
         <%- body -%>
     </div>
 </body>
-
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0htBQBFsWMSEwl2efcyxONE_ykG7PtI4&libraries=places&callback=initMap"
+        async defer></script>
 </html>
