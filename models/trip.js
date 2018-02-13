@@ -13,15 +13,15 @@ const tripSchema = new Schema({
   description: {
     type: String,
     required: [true, "please give description to your trip"]
+  },
+  startdate: {
+    type: Date,
+    required: [true, "please chose your String"]
+  },
+  enddate: {
+    type: Date,
+    required: [true, "please chose your date"]
   }
-  // startDate: {
-  //   type: Date,
-  //   required: [true, "please chose your date"]
-  // },
-  // endDate: {
-  //   type: Date,
-  //   required: [true, "please chose your date"]
-  // },
   // creator: userid,
   // joinedUsers: [usersid],
   // activities: [activity_id],
