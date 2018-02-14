@@ -2,7 +2,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #5cd8e9;
+  background: #a4c9ec;
   padding-top: 50px;
 }
 
@@ -109,4 +109,42 @@ select {
   margin: 20px auto;
   padding: 20px;
   width: 100%;
+}
+#my-profile {
+  border: solid;
+  width: 750px;
+  height: 850px;
+  float: left;
+  margin-left: 60px;
+}
+
+#right-container {
+  border: solid;
+  width: 750px;
+  height: 850px;
+  float: right;
+  margin-right: 60px;
+}
+
+#people-joining {
+  border: solid;
+  width: 730px;
+  height: 400px;
+  float: right;
+  margin-right: 8px;
+}
+
+#my-trips {
+  border: solid;
+  width: 730px;
+  height: 400px;
+  float: right;
+  margin-top: 15px;
+  margin-right: 8px;
+}
+
+#profile-picture {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
 }

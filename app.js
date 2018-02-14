@@ -14,6 +14,7 @@ const index = require("./routes/index");
 const authRoutes = require("./routes/auth-routes");
 const trip = require("./routes/trip");
 const about = require("./routes/about");
+const profilesController = require("./routes/profilesController");
 mongoose.connect("mongodb://localhost/basic-auth");
 
 // view engine setup
@@ -61,7 +62,7 @@ app.use("/", authRoutes);
 app.use("/", index);
 app.use("/", trip);
 app.use("/", about);
-
+app.use("/profiles", profilesController);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   const err = new Error("Not Found");

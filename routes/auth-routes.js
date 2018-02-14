@@ -1,10 +1,32 @@
 const express = require("express");
 const authRoutes = express.Router();
+//const Picture = require("../models/pictures");
+//var multer = require("multer");
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
+//var upload = multer({ dest: "./public/uploads/" });
 const bcryptSalt = 10;
+<<<<<<< HEAD
 var multer = require("multer");
 var upload = multer({ dest: "./public/uploads/" });
+=======
+// authRoutes.post("/upload", upload.single("photo"), function(req, res) {
+//   const pic = new Picture({
+//     name: req.body.name,
+//     path: `/uploads/${req.file.filename}`,
+//     originalName: req.file.originalname
+//   });
+
+//   pic.save(err => {
+//     res.redirect("/");
+//   });
+// });
+// authRoutes.get("/hdhfg", function(req, res, next) {
+//   Picture.find((err, pictures) => {
+//     res.render("index", { pictures });
+//   });
+// });
+>>>>>>> 96756a38b44b1f45072b3e7e0929db79f2fcd8c4
 
 authRoutes.get("/signup", (req, res, next) => {
   res.render("auth/signup");
