@@ -24,8 +24,8 @@ router.post("/trip", (req, res, next) => {
     description,
     startdate,
     enddate,
-    location,
-    activity
+    activity,
+    location
   });
   if (
     newTrip.title === "" ||
