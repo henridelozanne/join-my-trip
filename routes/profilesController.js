@@ -6,7 +6,8 @@ profilesController.get("/", (req, res, next) => {
     firstname: req.session.currentUser.firstname,
     lastname: req.session.currentUser.lastname,
     description: req.session.currentUser.description,
-    email: req.session.currentUser.email
+    email: req.session.currentUser.email,
+    img: req.session.currentUser.img
   });
 });
 

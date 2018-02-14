@@ -5,7 +5,11 @@ body {
   background: #a4c9ec;
   padding-top: 50px;
 }
-
+.photoProfile {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
 a {
   color: #00b7ff;
 }

@@ -6,10 +6,8 @@ const User = require("../models/user");
 const bcrypt = require("bcrypt");
 //var upload = multer({ dest: "./public/uploads/" });
 const bcryptSalt = 10;
-<<<<<<< HEAD
 var multer = require("multer");
 var upload = multer({ dest: "./public/uploads/" });
-=======
 // authRoutes.post("/upload", upload.single("photo"), function(req, res) {
 //   const pic = new Picture({
 //     name: req.body.name,
@@ -26,7 +24,6 @@ var upload = multer({ dest: "./public/uploads/" });
 //     res.render("index", { pictures });
 //   });
 // });
->>>>>>> 96756a38b44b1f45072b3e7e0929db79f2fcd8c4
 
 authRoutes.get("/signup", (req, res, next) => {
   res.render("auth/signup");
