@@ -44,6 +44,19 @@ app.use(
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use((req, res, next) => {
+  // res.locals.isUserLoggedin = req.user != undefined
+  res.locals.isUserLoggedin = false;
+
+  next();
+});
+app.use((req, res, next) => {
+  // res.locals.isUserLoggedin = req.user != undefined
+  res.locals.isUserLoggedinn = false;
+
+  next();
+});
+
 app.use("/", authRoutes);
 app.use("/", index);
 app.use("/", trip);

@@ -23,6 +23,10 @@ const userSchema = new Schema({
   description: {
     type: String,
     required: true
+  },
+
+  img: {
+    type: String
   }
   // gender: {
   //   type: String,

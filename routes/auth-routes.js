@@ -3,6 +3,8 @@ const authRoutes = express.Router();
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
+var multer = require("multer");
+var upload = multer({ dest: "./public/uploads/" });
 
 authRoutes.get("/signup", (req, res, next) => {
   res.render("auth/signup");
@@ -11,13 +13,14 @@ authRoutes.get("/login", (req, res, next) => {
   res.render("auth/login");
 });
 
-authRoutes.post("/signup", (req, res, next) => {
+authRoutes.post("/signup", upload.single("photo"), (req, res, next) => {
   const firstname = req.body.firstname;
   const lastname = req.body.lastname;
   const email = req.body.email;
   const password = req.body.password;
   //const checkbox = req.body.checkbox;
   const description = req.body.description;
+  const img = `/uploads/${req.file.filename}`;
   const salt = bcrypt.genSaltSync(bcryptSalt);
   const hashPass = bcrypt.hashSync(password, salt);
 
@@ -26,6 +29,7 @@ authRoutes.post("/signup", (req, res, next) => {
     lastname,
     email,
     description,
+    img,
     password: hashPass
   });
   if (
@@ -33,7 +37,8 @@ authRoutes.post("/signup", (req, res, next) => {
     newUser.password === "" ||
     newUser.lastname === "" ||
     newUser.email === "" ||
-    newUser.description === ""
+    newUser.description === "" ||
+    newUser.img === ""
   ) {
     res.render("auth/signup", {
       errorMessage: "Please fill in all the fields"
