@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const tripSchema = new Schema({
   title: {
     type: String,
-    required: [true, "please give title to your trip"]
+    required: [true, "please give a title to your trip"]
   },
   userId: {
     type: Schema.Types.ObjectId,
@@ -12,11 +12,11 @@ const tripSchema = new Schema({
   },
   description: {
     type: String,
-    required: [true, "please give description to your trip"]
+    required: [true, "please give a description to your trip"]
   },
   startdate: {
     type: Date,
-    required: [true, "please chose your String"]
+    required: [true, "please chose your date"]
   },
   enddate: {
     type: Date,
@@ -24,7 +24,7 @@ const tripSchema = new Schema({
   },
   location: {
     type: String,
-    required: [true, "silvp artv"]
+    required: [true, "please add a location to your trip"]
   },
   activity: {
     type: String
