@@ -1,11 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const User = require("../models/user");
 const Trip = require("../models/trip");
 const moment = require("moment");
 
 router.get("/trip", (req, res, next) => {
-  res.render("trip");
+  if (req.session.currentUser) {
+    res.render("trip");
+  } else {
+    res.redirect("/login");
+  }
 });
 
 router.post("/trip", (req, res, next) => {
