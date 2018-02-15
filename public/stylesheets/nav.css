@@ -33,7 +33,10 @@
   color: white;
   float: left;
 }
-
+#accordion {
+  width: 600px;
+  margin: 0 auto;
+}
 .topnav .icon {
   display: none;
 }
@@ -42,9 +45,13 @@
   .topnav a:not(:first-child) {
     display: none;
   }
+
   .topnav a.icon {
     float: right;
     display: block;
+  }
+  #accordion {
+    width: 100%;
   }
 }
 
