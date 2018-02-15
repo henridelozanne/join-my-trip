@@ -36,12 +36,15 @@
 #accordion {
   width: 600px;
   margin: 0 auto;
+<<<<<<< HEAD
   margin-top: 15%;
   box-sizing: border-box;
   background: white;
   padding: 40px;
   border: 2px solid gray;
   border-radius: 20px;
+=======
+>>>>>>> 1017bb33ffafa3cc85c6aa0b8490851474a359d6
 }
 .topnav .icon {
   display: none;

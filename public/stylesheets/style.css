@@ -189,7 +189,10 @@ select {
   padding: 0 18px;
   background-color: white;
   max-height: 0;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1017bb33ffafa3cc85c6aa0b8490851474a359d6
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
