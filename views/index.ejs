@@ -1,13 +1,7 @@
+<h1>Réservez des logements et des expériences uniques dans le monde entier.</h1>
 <input id="myInput" type="search" onkeyup="myFunction()" class="search" placeholder="Search">
 
-<select id="select">
-    <option value="adventure">Adventure</option>
-    <option value="music">Music</option>
-    <option value="hiking">Hiking</option>
-    <option value="museum">Museum</option>
-</select>
-<input type="date">
-<input type="date">
+
 
 <div id="trips">
 
@@ -20,8 +14,8 @@
                     <br>
                     <br>
                     <%= trip.location %>
-                    <%= trip.usr %>
-                        <br>
+                        <%= trip.usr %>
+                            <br>
             </div>
             <div>
                 <%= trip.description %>
@@ -30,14 +24,12 @@
 
                             <br>
                             <br>
-                            <a href="triplink">Read More</a>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
             </div>
 
         </li>
 
         <% }) %>
 
+
 </div>
-
-
-

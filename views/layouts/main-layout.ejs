@@ -25,17 +25,20 @@
             <a href="/" class="active">JoinTrip</a>
             <a href="about" class="right">About</a>
             
-           <a href="profiles" class="right">My Profile</a>
-            
-                <a href="login" class="right">Login</a>
-           
-           
-                
+                <% if(isUserLoggedinn){%>
             <a href="logout" class="right">Logout</a>
-           
+           <a href="profiles" class="right">My Profile</a>
+            <a href="trip" class="right">Create your trip</a>
+                <%}%>
+                <% if(!isUserLoggedinn){%>
+                <a href="login" class="right">Login</a>
             
             <a href="signup" class="right">Signup</a>
-            <a href="trip" class="right">Create your trip</a>
+                <%}%>
+           
+                
+           
+            
             
             <a href="javascript:void(0);" class="icon" onclick="myFunc()">&#9776;</a>
         </div>
@@ -44,6 +47,7 @@
         <%- body -%>
     </div>
 </body>
+
  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0htBQBFsWMSEwl2efcyxONE_ykG7PtI4&libraries=places&callback=initMap"
         async defer></script>
 </html>
