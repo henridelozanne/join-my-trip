@@ -28,6 +28,9 @@ const tripSchema = new Schema({
   },
   activity: {
     type: String
+  },
+  usr: {
+    type: String
   }
   // creator: userid,
   // joinedUsers: [usersid],

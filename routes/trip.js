@@ -12,6 +12,7 @@ router.get("/trip", (req, res, next) => {
 });
 
 router.post("/trip", (req, res, next) => {
+  const usr = req.session.currentUser.firstname;
   const title = req.body.title;
   const description = req.body.description;
   const startdate = req.body.startdate;
@@ -25,7 +26,8 @@ router.post("/trip", (req, res, next) => {
     startdate,
     enddate,
     activity,
-    location
+    location,
+    usr
   });
   if (
     newTrip.title === "" ||

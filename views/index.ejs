@@ -20,11 +20,12 @@
                     <br>
                     <br>
                     <%= trip.location %>
+                    <%= trip.usr %>
                         <br>
             </div>
             <div>
                 <%= trip.description %>
-                    <%= trip.startdate %>
+                    <%= moment(trip.startdate).format('DD-MM-YYYY') %>
                         <%= trip.activity %>
 
                             <br>
@@ -40,22 +41,3 @@
 
 
 
-<!-- <script>
-    function getSearchResult(str) {
-
-
-    }
-
-    function showResults(results) {
-
-    }
-
-    console.log(document.getElementById("search-bar"))
-    document.getElementById("search-bar").  = (e) => {
-        const searchString = e.target.value 
-        const results = getSearchResult(searchString);
-        showResults(results)
-
-    }
-
-</script> -->
