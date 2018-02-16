@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const logger = require("morgan");
@@ -13,7 +14,9 @@ const authRoutes = require("./routes/auth-routes");
 const trip = require("./routes/trip");
 const about = require("./routes/about");
 const profilesController = require("./routes/profilesController");
-mongoose.connect("mongodb://localhost/basic-auth");
+mongoose.connect(
+  "mongodb://heroku_0953v3hj:bnqh043imf9g0mc6tql4auv4um@ds237808.mlab.com:37808/heroku_0953v3hj"
+);
 
 // view engine setup
 app.use(express.static("public"));

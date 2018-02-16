@@ -10,10 +10,8 @@
 
 <body>
 
-  <form id="form" action="/trip" method="POST">
-    <label for="title">Trip title:</label><br>
-    <input class="o" type="text" name="title"
-      placeholder="ex : Trip to Vietnam">
+  <form id="form" action="/trip" method="POST" enctype="multipart/form-data">
+   
 
     <br><br>
     <label for="description">Description:</label><br>
@@ -37,6 +35,8 @@
     <option value="city-visit">City visit</option>
     <option value="other">Other</option>
    </select><br><br>
+   <label for="picture">Trip picture:</label><br>
+    <input type="file" name="picture"><br><br>
      <div id="pac-container">
     <input id="pac-input" type="text"
         placeholder="Enter a location" name="location">

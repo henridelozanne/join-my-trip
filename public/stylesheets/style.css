@@ -2,22 +2,35 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
-
+  font-size: 100%;
+  font-family: "Kavivanar", cursive;
   padding-top: 50px;
+  background: rgb(228, 227, 227);
 }
-.photoProfile {
-  width: 200px;
+.date {
+  padding-right: 20px;
+}
+.photoProfile img {
+  width: 100%;
   height: 200px;
-  border-radius: 50%;
+  border-radius: 25px 25px 0 0;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  width: 80%;
+  margin: uto;
 }
 a {
   color: #00b7ff;
 }
-.img {
-  width: 100%;
-  height: 60px;
-  background-image: url("../images/back.jpg");
-}
+
 #select {
   width: 100px;
 }
@@ -39,19 +52,21 @@ a {
 }
 #trips {
   display: flex;
-  padding-top: 150px;
+  padding-top: 50px;
   justify-content: space-around;
   flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
 }
 .trips {
-  width: 200px;
-  margin: 30px 90px;
-  box-sizing: border-box;
-  padding: 20px;
+  width: 300px;
+  margin: 15px;
+  border-radius: 25px;
   list-style-type: none;
-  height: 300px;
-  background: #4a8ce4;
-  border: 4px solid white;
+  text-align: center;
+  height: 500px;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #form {
@@ -168,9 +183,17 @@ select {
   transition: 0.4s;
 }
 
-.active,
+.activee,
 .accordion:hover {
   background-color: #ccc;
+}
+.searchup {
+  width: 700px;
+  margin: 0 auto;
+  margin-top: 90px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .accordion:after {
@@ -181,7 +204,7 @@ select {
   margin-left: 5px;
 }
 
-.active:after {
+.activee:after {
   content: "\2212";
 }
 
@@ -189,10 +212,13 @@ select {
   padding: 0 18px;
   background-color: white;
   max-height: 0;
-<<<<<<< HEAD
 
-=======
->>>>>>> 1017bb33ffafa3cc85c6aa0b8490851474a359d6
   overflow: hidden;
   transition: max-height 0.2s ease-out;
+}
+.searchlogo {
+  width: 80px;
+  height: 80px;
+
+  margin-right: 20px;
 }

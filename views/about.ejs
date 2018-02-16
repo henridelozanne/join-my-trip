@@ -40,23 +40,7 @@
     <a href="signup">create your account</a> or
     <a href="login">log-in</a>.
   </p>
-  <div id="accordion">
-    <button class="accordion">Join My Trip</button>
-    <div class="panel">
-      <p>Join now and connect to people around the world that have the same passion as you: discovering this planet!</p>
-    </div>
-
-    <button class="accordion">Section 2</button>
-    <div class="panel">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-
-    <button class="accordion">Section 3</button>
-    <div class="panel">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
+  
   </div>
   <script>
     var acc = document.getElementsByClassName("accordion");
@@ -64,7 +48,7 @@
 
     for (i = 0; i < acc.length; i++) {
       acc[i].addEventListener("click", function () {
-        this.classList.toggle("active");
+        this.classList.toggle("activee");
         var panel = this.nextElementSibling;
         if (panel.style.maxHeight) {
           panel.style.maxHeight = null;

@@ -1,38 +1,54 @@
-<h1>Réservez des logements et des expériences uniques dans le monde entier.</h1>
-<input id="myInput" type="search" onkeyup="myFunction()" class="search" placeholder="Search">
-
+<input id="myInput" type="search" onkeyup="myFunction()" class="search" placeholder="Search a trip destination">
 
 
 <div id="trips">
 
     <% trips.forEach(trip => { %>
-
         <li class="trips">
             <div class="show">
-                <%= trip.title %>
-                    <div src="" class="img" alt=""></div>
-                    <br>
-                    <br>
+                <div class="photoProfile">
+                    <img src="<%= trip.tripPicture %>" alt="profile picture" />
+                </div>
+                <h1>
+
                     <%= trip.location %>
-                        <%= trip.usr %>
+                </h1>
+
+
+                <hr>
+                <%= trip.usr %>
+
+
+
+                    <hr>
+                    <i>
+
+
+                        <%= trip.description %>
+                    </i>
+                    <hr>
+                    <i>
+
+                        <%= moment(trip.startdate).format('DD-MM-YYYY') %>
                             <br>
-                            <%= trip.usr %>
-                                <br>
-            </div>
-            <div>
-                <%= trip.description %>
-                    <%= moment(trip.startdate).format('DD-MM-YYYY') %>
+
+
+                            <%= moment(trip.enddate).format('DD-MM-YYYY') %>
+                    </i>
+                    <hr>
+                    <b>
+
                         <%= trip.activity %>
+                    </b>
+                    <hr>
 
-                            <br>
-                            <br>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
+
+                    <a href="#">Join trip</a>
+
+
             </div>
-
         </li>
-
         <% }) %>
 
 
-</div>
 </div>

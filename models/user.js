@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
+  author: { type: Schema.Types.ObjectId, ref: "Person" },
   firstname: {
     type: String,
     required: true
@@ -27,7 +28,8 @@ const userSchema = new Schema({
 
   img: {
     type: String
-  }
+  },
+  fans: [{ type: Schema.Types.ObjectId, ref: "Person" }]
   // gender: {
   //   type: String,
   //   required: true

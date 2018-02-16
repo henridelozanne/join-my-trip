@@ -2,7 +2,8 @@ const express = require("express");
 const router = express.Router();
 const Trip = require("../models/trip");
 const moment = require("moment");
-
+var multer = require("multer");
+var upload = multer({ dest: "./public/uploads/" });
 router.get("/trip", (req, res, next) => {
   if (req.session.currentUser) {
     res.render("trip");
@@ -11,31 +12,33 @@ router.get("/trip", (req, res, next) => {
   }
 });
 
-router.post("/trip", (req, res, next) => {
+router.post("/trip", upload.single("picture"), (req, res, next) => {
   const usr = req.session.currentUser.firstname;
-  const title = req.body.title;
+
   const description = req.body.description;
   const startdate = req.body.startdate;
   const enddate = req.body.enddate;
   const location = req.body.location;
   const activity = req.body.activity;
+  const tripPicture = `/uploads/${req.file.filename}`;
   const newTrip = Trip({
     // userId: req.session.currentUser._id,
-    title,
+
     description,
     startdate,
     enddate,
     activity,
     location,
-    usr
+    usr,
+    tripPicture
   });
   if (
-    newTrip.title === "" ||
     newTrip.description === "" ||
     newTrip.startdate === "" ||
     newTrip.enddate === "" ||
     newTrip.activity === "" ||
-    newTrip.location === ""
+    newTrip.location === "" ||
+    newTrip.tripPicture === ""
   ) {
     res.render("trip", {
       errorMessage: "Please fill in all the fields"
