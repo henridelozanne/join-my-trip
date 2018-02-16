@@ -1,57 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="stylesheets/style.css">
-  <title>Create your trip</title>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <link rel="stylesheet" href="stylesheets/style.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+ <title>Create your trip</title>
 </head>
 
 <body>
 
-  <form id="form" action="/trip" method="POST" enctype="multipart/form-data">
-   
+ <form class="col s12" id="form" action="/trip" method="POST">
+   <label for="title">Trip title:</label>
+   <br>
+   <input class="o" type="text" name="title" placeholder="ex : Visiting Maubeuge-city during the weekend">
 
-    <br><br>
-    <label for="description">Description:</label><br>
-    <textarea class="o" type="text" name="description"
-      placeholder="What do you want to do there ? How many people do you want for this trip ?"></textarea>
-    <br><br>
-     
-
-    <label for="startDate">Start date:</label><br>
-    <input id="startDate" name="startdate" type="date">
-
-    <label for="endDate">End date:</label><br>
-    <input id="endDate" name="enddate" type="date">
-    <br><br>
-    <label for="activity">Activity:</label><br>
-    <select id="select" name="activity">
-    <option value="adventure">Adventure</option>
-    <option value="cycling">Cycling</option>
-    <option value="nature-and-wildlife">Nature and wildlife</option>
-    <option value="arts-and-culture">Arts and culture</option>
-    <option value="city-visit">City visit</option>
-    <option value="other">Other</option>
-   </select><br><br>
-   <label for="picture">Trip picture:</label><br>
-    <input type="file" name="picture"><br><br>
-     <div id="pac-container">
-    <input id="pac-input" type="text"
-        placeholder="Enter a location" name="location">
-  </div>
+   <br>
+   <br>
+   <label for="description">Description:</label>
+   <br>
+   <textarea class="materialize-textarea o" type="text" name="description" placeholder="What do you want to do there ? How many people do you want for this trip ?"></textarea>
+   <br>
+   <br>
 
 
-  
-<br>
-<div id="map"></div>
+   <label for="startDate">Start date:</label>
+   <br>
+   <input id="startDate" name="startdate" type="date">
 
-    <button>Create trip!</button>
-  </form>
-<% if (typeof(errorMessage) != "undefined") { %>
-  <div class="error-message"><%= errorMessage %></div>
-<% } %>
+
+   <label for="endDate">End date:</label>
+   <br>
+   <input id="endDate" name="enddate" type="date">
+   <br>
+   <br>
+
+   <label for="activity">Activity:</label>
+   <br>
+   <select id="select" name="activity">
+     <option value="adventure">Adventure</option>
+     <option value="cycling">Cycling</option>
+     <option value="nature-and-wildlife">Nature and wildlife</option>
+     <option value="arts-and-culture">Arts and culture</option>
+     <option value="city-visit">City visit</option>
+     <option value="other">Other</option>
+   </select>
+   <br>
+   <br>
+
+
+
+   <div id="pac-container">
+     <label for="location">Location:</label>
+     <br>
+     <input id="pac-input" type="text" placeholder="Enter a location" name="location">
+   </div>
+
+
+
+   <br>
+   <div id="map"></div>
+   <br>
+   <button>Create trip!</button>
+ </form>
+ <% if (typeof(errorMessage) != "undefined") { %>
+   <div class="error-message">
+     <%= errorMessage %>
+   </div>
+   <% } %>
 
 </body>
+
 </html>
