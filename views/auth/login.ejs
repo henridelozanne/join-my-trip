@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="stylesheets/style.css">
-  <title>Login</title>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <link rel="stylesheet" href="stylesheets/style.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+ <title>Login</title>
 </head>
 
 <body>
 
-  <form id="form" action="/login" method="POST">
-   
-     <label for="email">Email</label><br>
-    <input type="email" name="email"
-      placeholder="john@doe.com">
+ <form class="col s12" id="form" action="/login" method="POST">
 
-    <br><br>
-    <label for="password">Password</label><br>
-    <input type="password" name="password"
-      placeholder="DeathStar">
-    <br><br>
+   <label for="email">Email</label>
+   <br>
+   <input type="email" name="email" placeholder="john@doe.com">
+
+   <br>
+   <br>
+   <label for="password">Password</label>
+   <br>
+   <input type="password" name="password" placeholder="DeathStar">
+   <br>
+   <br>
 
 
-    <button>Login</button><br><br>or <br><br>
+   <button>Login</button>
 
-    <button>Create an account</button>
-  </form>
-  <% if (typeof(errors) != "undefined") { %>
-  <div class="error-message"><%= errors %></div>
-<% } %>
-  
+   <span id="dont-have-account">You don't have an account yet ?
+     <a href="signup">Sign-up</a>
+   </span>
+ </form>
+ <% if (typeof(errors) != "undefined") { %>
+   <div class="error-message">
+     <%= errors %>
+   </div>
+   <% } %>
+
 </body>
+
 </html>
